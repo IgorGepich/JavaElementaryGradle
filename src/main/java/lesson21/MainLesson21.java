@@ -6,7 +6,6 @@ import lesson21.Observer.SecondCounter;
 import lesson21.Observer.WriteFileObserver;
 
 import java.math.BigInteger;
-import java.util.Properties;
 import java.util.concurrent.*;
 
 /**
@@ -35,71 +34,71 @@ public class MainLesson21 {
 		/**
 		 * Fibonacci
 		 */
-//
-//		State state = new State();
-//		Fibonacci fibonacci = new Fibonacci(10, state);
-//		ExecutorService executorFibonacci = Executors.newFixedThreadPool(2);
-//		Future<BigInteger> futureFibonacci = executorFibonacci.submit(fibonacci);
-//		try {
-//			futureFibonacci.get(500, TimeUnit.MILLISECONDS);
-//		} catch (InterruptedException e) {
-//			System.out.println("Cancelled");
-//			futureFibonacci.cancel(true);
-//			e.printStackTrace();
-//		} catch (ExecutionException e) {
-//			System.err.println(e.getMessage());
-//		} catch (TimeoutException e) {
-//			System.out.println("After timeout before cancel:");
-//			futureFibonacci.cancel(true);
-//			System.out.println("Time out.");
-//		} finally {
-//			state = fibonacci.getState();
-//			shutdownAndAwaitTermination(executorFibonacci);
-//		}
+
+		State state = new State();
+		Fibonacci fibonacci = new Fibonacci(10, state);
+		ExecutorService executorFibonacci = Executors.newFixedThreadPool(2);
+		Future<BigInteger> futureFibonacci = executorFibonacci.submit(fibonacci);
+		try {
+			futureFibonacci.get(500, TimeUnit.MILLISECONDS);
+		} catch (InterruptedException e) {
+			System.out.println("Cancelled");
+			futureFibonacci.cancel(true);
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			System.err.println(e.getMessage());
+		} catch (TimeoutException e) {
+			System.out.println("After timeout before cancel:");
+			futureFibonacci.cancel(true);
+			System.out.println("Time out.");
+		} finally {
+			state = fibonacci.getState();
+			shutdownAndAwaitTermination(executorFibonacci);
+		}
 
 		/**
 		 * After Cancel
 		 */
 
-//		fibonacci = new Fibonacci(10, state);
-//		ExecutorService executorFibonacci1 = Executors.newFixedThreadPool(2);
-//		futureFibonacci = executorFibonacci1.submit(fibonacci);
-//		try {
-//			futureFibonacci.get(50, TimeUnit.MILLISECONDS);
-//		} catch (InterruptedException e) {
-//			System.out.println("Cancelled");
-//			futureFibonacci.cancel(true);
-//			e.printStackTrace();
-//		} catch (ExecutionException e) {
-//			System.err.println(e.getMessage());
-//		} catch (TimeoutException e) {
-//			System.out.println("After timeout before cancel:");
-//			futureFibonacci.cancel(true);
-//			System.out.println("Time out.");
-//		} finally {
-//			shutdownAndAwaitTermination(executorFibonacci1);
-//		}
+		fibonacci = new Fibonacci(10, state);
+		ExecutorService executorFibonacci1 = Executors.newFixedThreadPool(2);
+		futureFibonacci = executorFibonacci1.submit(fibonacci);
+		try {
+			futureFibonacci.get(50, TimeUnit.MILLISECONDS);
+		} catch (InterruptedException e) {
+			System.out.println("Cancelled");
+			futureFibonacci.cancel(true);
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			System.err.println(e.getMessage());
+		} catch (TimeoutException e) {
+			System.out.println("After timeout before cancel:");
+			futureFibonacci.cancel(true);
+			System.out.println("Time out.");
+		} finally {
+			shutdownAndAwaitTermination(executorFibonacci1);
+		}
 
 		/**
 		 * Seconds counter
 		 */
 
-//		SecondCounter secondCounter = new SecondCounter();
-//		secondCounter.addObserver(new ConsoleObserver());
-//		secondCounter.addObserver(new WriteFileObserver());
-//		secondCounter.addObserver(new PublisherClient());
-//		ExecutorService executorService1 = Executors.newSingleThreadExecutor();
-//		Future<Integer> seconds = executorService1.submit(secondCounter);
-//		try{
-//			seconds.get(100, TimeUnit.SECONDS);
-//		} catch (TimeoutException e) {
-//			seconds.cancel(true);
-//			System.out.println("Stopwatch stopped by timeout.");
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			shutdownAndAwaitTermination(executorService1);
-//		}
+		SecondCounter secondCounter = new SecondCounter();
+		secondCounter.addObserver(new ConsoleObserver());
+		secondCounter.addObserver(new WriteFileObserver());
+		secondCounter.addObserver(new PublisherClient());
+		ExecutorService executorService1 = Executors.newSingleThreadExecutor();
+		Future<Integer> seconds = executorService1.submit(secondCounter);
+		try{
+			seconds.get(100, TimeUnit.SECONDS);
+		} catch (TimeoutException e) {
+			seconds.cancel(true);
+			System.out.println("Stopwatch stopped by timeout.");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			shutdownAndAwaitTermination(executorService1);
+		}
 
 		/**
 		 * 04 Task Copy File Treads
@@ -141,7 +140,4 @@ public class MainLesson21 {
 			Thread.currentThread().interrupt();
 		}
 	}
-
-
-
 }

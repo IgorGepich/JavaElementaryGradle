@@ -39,4 +39,7 @@ dependencies {
     // Lesson 21 MQTT
     compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0'
     compile 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+
+    //DB
+    compile 'org.xerial:sqlite-jdbc:3.16.1'
 }

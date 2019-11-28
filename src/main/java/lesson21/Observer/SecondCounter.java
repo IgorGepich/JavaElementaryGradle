@@ -5,9 +5,13 @@ import java.util.List;
 import java.util.concurrent.Callable;
 
 public class SecondCounter implements Callable<Integer>, IObserved {
-	private List<IObserver> IObservers = new ArrayList<>();
+	private List<IObserver> observers = new ArrayList<>();
 
 	private int second = 0;
+
+	private int getSecond() {
+		return second;
+	}
 
 	@Override
 	public Integer call() throws Exception {
@@ -22,18 +26,18 @@ public class SecondCounter implements Callable<Integer>, IObserved {
 
 	@Override
 	public void addObserver(IObserver o) {
-		IObservers.add(o);
+		observers.add(o);
 	}
 
 	@Override
 	public void removeObserver(IObserver o) {
-		IObservers.remove(o);
+		observers.remove(o);
 	}
 
 	@Override
 	public void notifyObservers() {
-		for(IObserver o : IObservers){
-			o.onHandleEvent(second);
+		for(IObserver o : observers){
+			o.onHandleEvent(getSecond());
 		}
 	}
 
@@ -42,9 +46,5 @@ public class SecondCounter implements Callable<Integer>, IObserved {
 		return "SecondCounter{" +
 				"second=" + second +
 				'}';
-	}
-
-	public int getSecond() {
-		return second;
 	}
 }
