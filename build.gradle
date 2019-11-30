@@ -41,5 +41,7 @@ dependencies {
     compile 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
 
     //DB
-    compile 'org.xerial:sqlite-jdbc:3.16.1'
+
+    //TODO Version
+    compile 'org.xerial:sqlite-jdbc:3.27.2.1'
 }
