@@ -1,4 +1,4 @@
-package Lesson25DB;
+package lesson25DB;
 
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -9,7 +9,7 @@ public class CreateDeleteTable extends DbConnection {
 		try (Statement statement = super.connection.createStatement()) {
 			statement.executeUpdate("CREATE TABLE contacts_table " +
 					"(id INTEGER PRIMARY KEY AUTOINCREMENT," +
-					" name String, " +
+					"name String, " +
 					"lastName String, " +
 					"phoneNumber String)");
 			System.out.println("Create table Contacts in DB.");

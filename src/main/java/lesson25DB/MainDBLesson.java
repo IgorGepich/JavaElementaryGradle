@@ -1,6 +1,6 @@
-package Lesson25DB;
+package lesson25DB;
 
-public class Lesson25DataBase {
+public class MainDBLesson {
 	public static void main(String[] args) {
 
 		Connection connection = new Connection();
@@ -11,10 +11,7 @@ public class Lesson25DataBase {
 //		connection.deleteAllContacts();
 //		connection.getAllContacts();
 
-
-		Menu menu = new Menu();
-		menu.EnterNumberOfTheProgram();
-
+		new Menu().EnterNumberOfTheProgram();
 
 
 	}

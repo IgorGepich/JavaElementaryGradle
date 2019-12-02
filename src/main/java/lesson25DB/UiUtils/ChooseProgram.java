@@ -1,4 +1,4 @@
-package Lesson25DB.UiUtils;
+package lesson25DB.UiUtils;
 
 import static java.lang.System.out;
 

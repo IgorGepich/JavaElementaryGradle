@@ -1,6 +1,6 @@
-package Lesson25DB.UiUtils;
+package lesson25DB.UiUtils;
 
-import Lesson25DB.Contact;
+import lesson25DB.Contact;
 
 import java.util.Comparator;
 

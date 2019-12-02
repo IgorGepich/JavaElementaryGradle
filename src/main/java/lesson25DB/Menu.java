@@ -1,7 +1,7 @@
-package Lesson25DB;
+package lesson25DB;
 
 import java.util.Scanner;
-import Lesson25DB.UiUtils.ChooseProgram;
+import lesson25DB.UiUtils.ChooseProgram;
 
 class Menu {
 
@@ -9,6 +9,7 @@ class Menu {
 	private AddContact addContact = new AddContact();
 	private CreateDeleteTable table = new CreateDeleteTable();
 	private SortAndPrint sortAndPrint = new SortAndPrint();
+	private FindByName findByName = new FindByName();
 
 		void EnterNumberOfTheProgram(){
 
@@ -43,7 +44,7 @@ class Menu {
 					ExitOrContinue();
 					break;
 				case 5:
-					dbConnection.findContact();
+					findByName.findName();
 					System.out.println((char) 27 + "[34m-----------------------------------------" + (char)27 + "[0m");
 					ExitOrContinue();
 					break;
@@ -55,7 +56,7 @@ class Menu {
 				default:
 					System.out.println((char) 27 + "[31m                WARNING!" + (char)27 + "[0m");
 					System.out.println((char) 27 + "[31m-----------------------------------------" + (char)27 + "[0m");
-					System.out.println((char) 27 + "[31m    Wrong programme number " + (char)27 + "[0m");
+					System.out.println((char) 27 + "[31m           Wrong programme number " + (char)27 + "[0m");
 					System.out.println((char) 27 + "[31m-----------------------------------------" + (char)27 + "[0m");
 					EnterNumberOfTheProgram();
 			}

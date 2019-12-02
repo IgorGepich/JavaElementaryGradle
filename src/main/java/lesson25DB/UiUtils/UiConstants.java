@@ -1,4 +1,4 @@
-package Lesson25DB.UiUtils;
+package lesson25DB.UiUtils;
 
 class UiConstants {
 

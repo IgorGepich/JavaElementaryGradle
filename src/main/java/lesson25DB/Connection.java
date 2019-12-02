@@ -1,4 +1,4 @@
-package Lesson25DB;
+package lesson25DB;
 
 import org.sqlite.JDBC;
 
