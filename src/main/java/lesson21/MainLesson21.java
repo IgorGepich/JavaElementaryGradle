@@ -114,7 +114,7 @@ public class MainLesson21 {
 			copy.cancel(true);
 			System.out.println("Copy file cancelled");
 		} finally {
-			shutdownAndAwaitTermination(executorService);
+			shutdownAndAwaitTermination(executorService2);
 		}
 	}
 

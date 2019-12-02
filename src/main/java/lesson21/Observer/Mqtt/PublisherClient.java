@@ -1,7 +1,6 @@
 package lesson21.Observer.Mqtt;
 
 import lesson21.Observer.IObserver;
-import lesson21.Observer.SecondCounter;
 import org.eclipse.paho.client.mqttv3.IMqttClient;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
