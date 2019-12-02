@@ -5,7 +5,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 class FindByName extends DbConnection {
-
+	/**
+	 * Realization of Find method can find contact by name, or by partial name match.
+	 */
 	void findName(){
 	Statement statement = null;
 	System.out.println("Enter name to find: ");

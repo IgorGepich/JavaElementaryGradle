@@ -6,13 +6,9 @@ import java.sql.Statement;
 import java.util.*;
 
 class SortAndPrint extends DbConnection {
-
-
 	/**
-	 * Realization of Find and FindStudentByName methods can find Student by name, or by partial name match.
-	 * find Student by name, or by partial name match.
+	 * Sort all contacts by field First Name and it to CLI.
 	 */
-
 	void getAllSortedContacts() {
 		Statement statement = null;
 		try {
@@ -45,12 +41,12 @@ class SortAndPrint extends DbConnection {
 			}
 		}
 	}
-
 	/**
-	 * Sort all contacts by field First Name second realisation for myself
+	 * Sort all contacts by field First Name. Second realisation for myself
+	 * DEPRECATED METHOD
 	 */
-
 	private List<Contact> contacts = new ArrayList<>();
+
 	void getAllSortedContactsCollection() {
 		try (Statement statement = this.connection.createStatement()) {
 			ResultSet cursor = statement.executeQuery("SELECT id, " +
@@ -58,7 +54,7 @@ class SortAndPrint extends DbConnection {
 					"lastName, " +
 					"phoneNumber " +
 					"FROM contacts_table");
-			while (cursor.next()){
+			while (cursor.next()) {
 				contacts.add(new Contact(
 						cursor.getInt("id"),
 						cursor.getString("name"),
@@ -69,7 +65,7 @@ class SortAndPrint extends DbConnection {
 			for (Contact contact : contacts) {
 				System.out.println(contact.toString());
 			}
-		} catch (SQLException e){
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}

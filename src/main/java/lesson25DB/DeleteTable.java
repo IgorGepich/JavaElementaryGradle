@@ -7,12 +7,11 @@ class DeleteTable extends DbConnection {
 	/**
 	 * Class for deleting table from database.
 	 */
-
 	void deleteTable() {
 		try (Statement statement = super.connection.createStatement()) {
 			statement.executeUpdate("DROP TABLE contacts_table;" +
 					"DELETE FROM contacts_table");
-			System.out.println("Delete table Contacts from DB.");
+			System.out.println("Delete table contacts_table from DB.");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
