@@ -42,6 +42,5 @@ dependencies {
 
     //DB
 
-    //TODO Version
     compile 'org.xerial:sqlite-jdbc:3.27.2.1'
 }
