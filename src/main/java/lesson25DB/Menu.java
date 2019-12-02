@@ -5,12 +5,6 @@ import lesson25DB.UiUtils.ChooseProgram;
 
 class Menu {
 
-	private DbConnection dbConnection = new DbConnection();
-	private AddContact addContact = new AddContact();
-	private CreateDeleteTable table = new CreateDeleteTable();
-	private SortAndPrint sortAndPrint = new SortAndPrint();
-	private FindByName findByName = new FindByName();
-
 		void EnterNumberOfTheProgram(){
 
 			System.out.println((char) 27 + "[34m         Select an action 1-9: " + (char)27 + "[0m");
@@ -24,31 +18,32 @@ class Menu {
 
 			switch (choose) {
 				case 1:
-					table.createTable();
+					new CreateTable().createTable();
 					System.out.println((char) 27 + "[34m-----------------------------------------" + (char)27 + "[0m");
 					ExitOrContinue();
 					break;
 				case 2:
-					table.deleteTable();
+					new DeleteTable().deleteTable();
 					System.out.println((char) 27 + "[34m-----------------------------------------" + (char)27 + "[0m");
 					ExitOrContinue();
 					break;
 				case 3:
-					addContact.addContact();
+					new AddContact().addContact();
 					System.out.println((char) 27 + "[34m-----------------------------------------" + (char)27 + "[0m");
 					ExitOrContinue();
 					break;
 				case 4:
-					sortAndPrint.getAllSortedContacts();
+					new SortAndPrint().getAllSortedContacts();
 					System.out.println("\n" + (char) 27 + "[34m-----------------------------------------" + (char)27 + "[0m");
 					ExitOrContinue();
 					break;
 				case 5:
-					findByName.findName();
+					new FindByName().findName();
 					System.out.println((char) 27 + "[34m-----------------------------------------" + (char)27 + "[0m");
 					ExitOrContinue();
 					break;
 				case 6:
+					// Test case
 					System.out.println((char) 27 + "[34m-----------------------------------------" + (char)27 + "[0m");
 					ExitOrContinue();
 					break;
@@ -62,14 +57,14 @@ class Menu {
 			}
 		}
 
-	void ExitOrContinue() {
+	private void ExitOrContinue() {
 
 			 System.out.println((char) 27 + "[34m------------------PRESS------------------" + (char) 27 + "[0m");
 			 System.out.println((char) 27 + "[34m 1. Continue ------ or ------ 2. EXIT " + (char) 27 + "[0m");
 			 Scanner choose2 = new Scanner(System.in);
 			 int secondChoose = 0;
 
-			 // проверка на ввод числа с клавиатуры, при вводе буквы возвращает на старт ввода номера программы
+			 // Input number check
 			 if (choose2.hasNextInt()) {
 				 secondChoose = choose2.nextInt();
 			 }
