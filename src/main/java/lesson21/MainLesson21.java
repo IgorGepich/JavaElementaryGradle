@@ -13,6 +13,7 @@ import java.util.concurrent.*;
  */
 public class MainLesson21 {
 	public static void main(String[] args){
+		new PublisherClient().createClient();
 		Callable<BigInteger> factorialTask = new Factorial(5);
 		ExecutorService executorService = Executors.newSingleThreadExecutor();
 		Future<BigInteger> bigIntegerFuture = executorService.submit(factorialTask);
