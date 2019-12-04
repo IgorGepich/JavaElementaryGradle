@@ -9,7 +9,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 public class PublisherClient implements IObserver {
 
 	IMqttClient publisher;
-	public void createClient(){
+	public void createMqttClient(){
 		try {
 			publisher = new MqttClient("tcp://77.122.9.2:1883", "TestSecondMqtt");
 		} catch (MqttException e) {
